@@ -1,31 +1,100 @@
-import { LogoIcon } from "assets/icons";
+import React, { useState } from "react";
+import styled from "styled-components";
+import {
+  DashboardIcon,
+  HumidifierIcon,
+  LogoIcon,
+  MotorIcon,
+  ThermometerIcon,
+  TreeIcon,
+  WaterwellIcon,
+} from "assets/icons";
 import { Flex } from "components";
 import { Body4, Body5, CaptionText } from "components/texts";
-import { MantraIcon } from "meistericons";
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
 
 const ActiveIndicator = styled.div`
   background: #16ad4d;
   width: 0.375rem;
-  height: 3rem;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
 `;
 
-function SidebarContainer() {
-  const links = [
-    { id: 1, icon: <MantraIcon />, link: "My Dashboard" },
-    { id: 2, icon: <MantraIcon />, link: "Humidity" },
-    { id: 3, icon: <MantraIcon />, link: "Temperature" },
-    { id: 4, icon: <MantraIcon />, link: "Motor" },
-    { id: 5, icon: <MantraIcon />, link: "Water Pump" },
-    { id: 6, icon: <MantraIcon />, link: "Plant Status" },
-  ];
+interface ISidebarContainerProps {
+  view: string;
+  setView: any;
+}
 
-  const [activeLink, setActiveLink] = useState<string>("My Dashboard");
+function SidebarContainer({ view, setView }: ISidebarContainerProps) {
+  const links = [
+    {
+      id: 1,
+      icon: (
+        <DashboardIcon
+          style={{
+            color: view === "My Dashboard" ? "#F8FAFC" : "#91A4B7",
+          }}
+        />
+      ),
+      link: "My Dashboard",
+    },
+    {
+      id: 2,
+      icon: (
+        <HumidifierIcon
+          style={{
+            color: view === "Humidity" ? "#F8FAFC" : "#91A4B7",
+          }}
+        />
+      ),
+      link: "Humidity",
+    },
+    {
+      id: 3,
+      icon: (
+        <ThermometerIcon
+          style={{
+            color: view === "Temperature" ? "#F8FAFC" : "#91A4B7",
+          }}
+        />
+      ),
+      link: "Temperature",
+    },
+    {
+      id: 4,
+      icon: (
+        <MotorIcon
+          style={{
+            color: view === "Motor" ? "#F8FAFC" : "#91A4B7",
+          }}
+        />
+      ),
+      link: "Motor",
+    },
+    {
+      id: 5,
+      icon: (
+        <WaterwellIcon
+          style={{
+            color: view === "Water Pump" ? "#F8FAFC" : "#91A4B7",
+          }}
+        />
+      ),
+      link: "Water Pump",
+    },
+    {
+      id: 6,
+      icon: (
+        <TreeIcon
+          style={{
+            color: view === "Plant Status" ? "#F8FAFC" : "#91A4B7",
+          }}
+        />
+      ),
+      link: "Plant Status",
+    },
+  ];
 
   return (
     <Flex
@@ -62,30 +131,28 @@ function SidebarContainer() {
         {links.map((item) => (
           <Flex
             key={item.id}
-            onClick={() => setActiveLink(item.link)}
+            onClick={() => setView(item.link)}
             gap={0.75}
             marginBottom={1.25}
             width="90%"
             style={{
               cursor: "pointer",
-              padding: "0.75rem 0.625rem",
-              background: `${
-                activeLink === item.link ? "#1C2A3A" : "transparent"
-              } `,
+              padding: "0.75rem 1rem",
+              background: `${view === item.link ? "#1C2A3A" : "transparent"} `,
               borderTopRightRadius: 8,
               borderBottomRightRadius: 8,
               position: "relative",
             }}
           >
             <>
-              {activeLink === item.link && <ActiveIndicator />}
+              {view === item.link && <ActiveIndicator />}
 
               {item.icon}
             </>
             <Body5
               lineHeight={24}
-              fontWeight={activeLink === item.link ? "bold" : "500"}
-              color={activeLink === item.link ? "#F8FAFC" : "#91A4B7"}
+              fontWeight={view === item.link ? "bold" : "500"}
+              color={view === item.link ? "#F8FAFC" : "#91A4B7"}
             >
               {item.link}
             </Body5>
