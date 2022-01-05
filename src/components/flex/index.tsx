@@ -59,7 +59,7 @@ const Flex = (props: IFlexProps) => {
     marginBottom = 0,
     gap = 0,
     wrap = "no-wrap",
-    onClick = () => console.log("flex"),
+    onClick,
   } = props;
 
   return (

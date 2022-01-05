@@ -10,7 +10,7 @@ import Navbar from "./components/navbar";
 import Sensors from "./components/sensors";
 import Graphs from "./components/graphs";
 import { useState } from "react";
-import { AuthPage, LandingPage } from "./pages";
+import { AuthPage, DashboardPage, LandingPage } from "./pages";
 
 const App = () => {
   // const { location } = useHistory();
@@ -36,6 +36,7 @@ const App = () => {
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/auth" element={<AuthPage />} />
+      <Route path="/dashboard" element={<DashboardPage />} />
     </Routes>
     // <div>
     //   <Navbar />

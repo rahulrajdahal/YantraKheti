@@ -57,15 +57,18 @@ function AuthPage() {
           <Button text="Create My Account" variant="outlined" color="#16AD4D" />
           <Flex
             alignItems="flex-end"
-            width="62%"
-            // gap={8.8}
+            width="63%"
             justifyContent="space-between"
             style={{
               position: "absolute",
               bottom: "3.75rem",
             }}
           >
-            <Flex alignItems="center" onClick={() => navigate("/")}>
+            <Flex
+              alignItems="center"
+              style={{ cursor: "pointer" }}
+              onClick={() => navigate("/")}
+            >
               <ArrowLeftIcon />
               <Body5 lineHeight={28}>Go Back to HomePage</Body5>
             </Flex>
@@ -76,9 +79,9 @@ function AuthPage() {
 
         <Flex
           direction="column"
-          width="32%"
+          width="26%"
           style={{
-            margin: "0 1%",
+            margin: "0 5%",
           }}
         >
           <Title4
@@ -102,7 +105,12 @@ function AuthPage() {
             Forgot Password?
           </Body6>
 
-          <Button text="Log In" background="#16AD4D" width="100%" />
+          <Button
+            onClick={() => navigate("/dashboard")}
+            text="Log In"
+            background="#16AD4D"
+            width="100%"
+          />
         </Flex>
       </Flex>
     </>
