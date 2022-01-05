@@ -7571,6 +7571,11 @@ media-typer@0.3.0:
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
 
+meistericons@^0.1.35:
+  version "0.1.35"
+  resolved "https://registry.yarnpkg.com/meistericons/-/meistericons-0.1.35.tgz#47a85858dd1da16bef080edcb22dc5a21cc92ca4"
+  integrity sha512-anUAggzcUUxoBLg/yK2aQ6TFCGaEO9nu2CSJbDesUuiOzppoB2YsWQTD4QzGfu/A39LRiTZGBwCsD1Q2mn1xag==
+
 memory-fs@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/memory-fs/-/memory-fs-0.4.1.tgz#3a9a20b8462523e447cfbc7e8bb80ed667bfc552"

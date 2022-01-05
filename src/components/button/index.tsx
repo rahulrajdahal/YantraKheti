@@ -1,11 +1,18 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import React from "react";
 
-const Container = styled.button`
+interface IContainerProps {
+  variant: string;
+  color: string;
+  width: string;
+  background: string;
+}
+
+const Container = styled.button<IContainerProps>`
   padding: 0.625rem 1.25rem;
-  background: #030913;
+  background: ${(p) => (p.variant === "fill" ? p.background : "transparent")};
   border-radius: 8px;
-  border: none;
+  border: ${(p) => (p.variant === "fill" ? "none" : `2px solid ${p.color}`)};
   outline: none;
 
   font-family: PlusJakarta;
@@ -13,7 +20,9 @@ const Container = styled.button`
   font-weight: bold;
   font-size: 16px;
   line-height: 28px;
-  color: #f8fafc;
+  color: ${(p) => p.color};
+
+  width: ${(p) => p.width};
 
   &:hover {
     cursor: pointer;
@@ -21,12 +30,33 @@ const Container = styled.button`
 `;
 
 interface IButtonProps {
+  variant?: "fill" | "outlined";
   text: string;
+  color?: string;
+  background?: string;
+  width?: string;
   onClick?(): any;
 }
 
-function Button({ text, onClick }: IButtonProps) {
-  return <Container onClick={onClick}>{text}</Container>;
+function Button({
+  text,
+  variant = "fill",
+  background = "#030913",
+  color = "#f8fafc",
+  width = "auto",
+  onClick,
+}: IButtonProps) {
+  return (
+    <Container
+      width={width}
+      variant={variant}
+      background={background}
+      color={color}
+      onClick={onClick}
+    >
+      {text}
+    </Container>
+  );
 }
 
 export default Button;
