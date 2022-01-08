@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { Title2 } from "components/texts";
 import { Flex } from "components";
 import { SidebarContainer } from "containers";
-import MyDashboardContainer from "containers/dashboard/views/mydashboard";
-import HumidityContainer from "containers/dashboard/views/humidity";
-import TemperatureContainer from "containers/dashboard/views/temperature";
-import MotorContainer from "containers/dashboard/views/motor";
-import WaterpumpContainer from "containers/dashboard/views/waterpump";
-import PlantstatusContainer from "containers/dashboard/views/plantstatus";
+import {
+  MyDashboardContainer,
+  HumidityContainer,
+  TemperatureContainer,
+  MotorContainer,
+  WaterpumpContainer,
+  PlantstatusContainer,
+} from "containers";
 
 function DashboardPage() {
   const [view, setView] = useState<string>("My Dashboard");
