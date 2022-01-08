@@ -8,6 +8,9 @@ import {
   LOGIN_USER_FAILURE,
   LOGIN_USER_LOADING,
   LOGIN_USER_SUCCESS,
+  LOGOUT_USER_FAILURE,
+  LOGOUT_USER_LOADING,
+  LOGOUT_USER_SUCCESS,
 } from "./action";
 
 const api = new Api();
@@ -50,6 +53,27 @@ export const loginEpic = (action$: any) =>
         return { type: LOGIN_USER_SUCCESS, payload: action.payload };
       } else {
         return { type: LOGIN_USER_FAILURE, payload: false };
+      }
+    })
+  );
+
+export const logoutEpic = (action$: any) =>
+  action$.pipe(
+    ofType(LOGOUT_USER_LOADING),
+    flatMap(async (action: any) => {
+      try {
+        const response = await api.logoutUser();
+        return { payload: response };
+      } catch (e) {
+        console.log(e);
+        return false;
+      }
+    }),
+    map((action: any) => {
+      if (action.payload) {
+        return { type: LOGOUT_USER_SUCCESS, payload: action.payload };
+      } else {
+        return { type: LOGOUT_USER_FAILURE, payload: false };
       }
     })
   );

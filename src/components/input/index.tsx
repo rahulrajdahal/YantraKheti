@@ -8,6 +8,7 @@ interface IInputProps {
   label: string;
   width?: string;
   marginBottom?: number;
+  onChange?(e: any): any;
 }
 
 const InputBox = styled.input`
@@ -18,7 +19,12 @@ const InputBox = styled.input`
   width: 100%;
   padding: 0 0.8rem;
 `;
-function Input({ label, marginBottom = 0, width = "inherit" }: IInputProps) {
+function Input({
+  label,
+  marginBottom = 0,
+  width = "inherit",
+  onChange,
+}: IInputProps) {
   return (
     <Flex
       direction="column"
@@ -27,7 +33,7 @@ function Input({ label, marginBottom = 0, width = "inherit" }: IInputProps) {
       marginBottom={marginBottom}
     >
       <Body6>{label}</Body6>
-      <InputBox />
+      <InputBox onChange={onChange} />
     </Flex>
   );
 }

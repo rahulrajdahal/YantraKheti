@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
+
 import {
   DashboardIcon,
   HumidifierIcon,
   LogoIcon,
+  LogoutIcon,
   MotorIcon,
   ThermometerIcon,
   TreeIcon,
@@ -11,6 +13,7 @@ import {
 } from "assets/icons";
 import { Flex } from "components";
 import { Body4, Body5, CaptionText } from "components/texts";
+import { useNavigate } from "react-router-dom";
 
 const ActiveIndicator = styled.div`
   background: #16ad4d;
@@ -27,6 +30,7 @@ interface ISidebarContainerProps {
 }
 
 function SidebarContainer({ view, setView }: ISidebarContainerProps) {
+  const navigate = useNavigate();
   const links = [
     {
       id: 1,
@@ -158,6 +162,24 @@ function SidebarContainer({ view, setView }: ISidebarContainerProps) {
             </Body5>
           </Flex>
         ))}
+        <Flex
+          alignItems="center"
+          gap={0.75}
+          marginBottom={1.25}
+          width="90%"
+          onClick={() => navigate("/auth")}
+          style={{
+            cursor: "pointer",
+            padding: "0.75rem 1rem",
+            position: "absolute",
+            bottom: 0,
+          }}
+        >
+          <LogoutIcon />
+          <Body5 lineHeight={24} color="#91A4B7">
+            LogOut
+          </Body5>
+        </Flex>
       </>
       {/* <Flex direction="column"></Flex> */}
     </Flex>

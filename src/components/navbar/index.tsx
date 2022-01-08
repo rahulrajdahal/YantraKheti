@@ -1,9 +1,9 @@
 import React from "react";
-import { Button, Flex } from "components";
-import { Body2, Body3, Body5, Title5, Title6 } from "components/texts";
-import styled, { css } from "styled-components";
-import { LogoIcon } from "assets/icons";
 import { useNavigate } from "react-router-dom";
+
+import { Button, Flex } from "components";
+import { Body3, Body5 } from "components/texts";
+import { LogoIcon } from "assets/icons";
 
 export default function Navbar() {
   const navigate = useNavigate();

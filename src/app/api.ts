@@ -28,6 +28,18 @@ export default class Api {
     }
   }
 
+  async logoutUser() {
+    try {
+      const res = axios.post("/auth/logout");
+      console.log(`Login api response: ${res}`);
+      const data = get(res, "data");
+      return data;
+    } catch (e) {
+      console.log(`Login api error: ${e}`);
+      throw e;
+    }
+  }
+
   async getSensorValues() {
     try {
       const res = axios.get("/getSensorValues");

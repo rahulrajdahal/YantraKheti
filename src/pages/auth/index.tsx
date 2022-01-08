@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeftIcon } from "meistericons";
 
-import { Button, Flex, Navbar } from "components";
-import { Body3, Body4, Body5, Body6, Title3, Title4 } from "components/texts";
+import { Button, Flex } from "components";
+import { Body3, Body4, Body5, Body6, Title4 } from "components/texts";
 import { LogoIcon } from "assets/icons";
 import { authImage } from "assets/images";
 import Input from "components/input";
+import { useDispatch } from "react-redux";
+import { login, register } from "features/auth/action";
 
 const LeftContainer = styled.section`
   background: #e8f7ee;
@@ -18,15 +20,27 @@ const LeftContainer = styled.section`
 
 function AuthPage() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const [isSignup, setIsSignup] = useState<boolean>(false);
+
+  const [form, setForm] = useState<{
+    name: string;
+    email: string;
+    password: string;
+  }>({ name: "", email: "", password: "" });
+
+  // const handleSubmit = () => {
+  //   if (isSignup) {
+  //     dispatch(register(form));
+  //   } else {
+  //     dispatch(login(form));
+  //   }
+  // };
 
   return (
     <>
-      <Flex
-        gap={5}
-        alignItems="center"
-        // justifyContent="space-between"
-        width="100%"
-      >
+      <Flex gap={5} alignItems="center" width="100%">
         <LeftContainer>
           <Flex gap={0.75} alignItems="center" onClick={() => navigate("/")}>
             <LogoIcon />
@@ -49,32 +63,32 @@ function AuthPage() {
             lineHeight={32}
             style={{ width: "40%" }}
           >
-            Quickly Log In to your account and get access to all monitoring
-            systems that we have to offer. Creating a new account is easy and
-            FREE.
+            Quickly {isSignup ? "Create" : "Log In to"} your account and get
+            access to all monitoring systems that we have to offer.{" "}
+            {!isSignup && "Creating a new account is easy and FREE."}
           </Body4>
 
-          <Button text="Create My Account" variant="outlined" color="#16AD4D" />
-          <Flex
-            alignItems="flex-end"
-            width="63%"
-            justifyContent="space-between"
-            style={{
-              position: "absolute",
-              bottom: "3.75rem",
-            }}
-          >
-            <Flex
-              alignItems="center"
-              style={{ cursor: "pointer" }}
-              onClick={() => navigate("/")}
-            >
-              <ArrowLeftIcon />
-              <Body5 lineHeight={28}>Go Back to HomePage</Body5>
-            </Flex>
+          <Button
+            text={isSignup ? "Log In" : "Create My Account"}
+            variant="outlined"
+            color="#16AD4D"
+            onClick={() => setIsSignup((prev) => !prev)}
+          />
 
-            <img src={authImage} alt="login" />
+          <Flex
+            alignItems="center"
+            style={{ cursor: "pointer", position: "absolute", bottom: 32 }}
+            onClick={() => navigate("/")}
+          >
+            <ArrowLeftIcon />
+            <Body5 lineHeight={28}>Go Back to HomePage</Body5>
           </Flex>
+
+          <img
+            src={authImage}
+            alt="login"
+            style={{ position: "absolute", bottom: 0, left: "25%" }}
+          />
         </LeftContainer>
 
         <Flex
@@ -91,11 +105,34 @@ function AuthPage() {
             marginBottom={3.75}
             style={{ fontSize: 40 }}
           >
-            Log In
+            {isSignup ? "Create Your Account" : "Log In"}
           </Title4>
-
-          <Input label="Your Username" marginBottom={2} width="100%" />
-          <Input label="Your Password" marginBottom={2} width="100%" />
+          <>
+            {isSignup && (
+              <Input
+                label="Your Name"
+                marginBottom={2}
+                width="100%"
+                onChange={(e: any) =>
+                  setForm({ ...form, name: e.target.value })
+                }
+              />
+            )}
+          </>
+          <Input
+            label="Your Email"
+            marginBottom={2}
+            width="100%"
+            onChange={(e: any) => setForm({ ...form, email: e.target.value })}
+          />
+          <Input
+            label="Your Password"
+            marginBottom={2}
+            width="100%"
+            onChange={(e: any) =>
+              setForm({ ...form, password: e.target.value })
+            }
+          />
           <Body6
             color="#2051E5"
             lineHeight={20}
@@ -106,10 +143,11 @@ function AuthPage() {
           </Body6>
 
           <Button
-            onClick={() => navigate("/dashboard")}
-            text="Log In"
+            text={isSignup ? "Create Account" : "Log In"}
             background="#16AD4D"
             width="100%"
+            onClick={() => navigate("/dashboard")}
+            // onClick={handleSubmit}
           />
         </Flex>
       </Flex>

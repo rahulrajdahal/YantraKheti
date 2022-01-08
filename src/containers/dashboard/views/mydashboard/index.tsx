@@ -2,24 +2,28 @@ import React from "react";
 import styled from "styled-components";
 
 import { Body1, Body3, Body5 } from "components/texts";
-import { Flex } from "components";
-import { ThermometerIcon } from "assets/icons";
+import { Button, Flex } from "components";
+import { useDispatch } from "react-redux";
+import { getSensorData } from "features/sensor/action";
 
 export const ViewContainer = styled.div`
   margin: 2rem;
 `;
 
 const Card = styled.div`
+  min-width: 23rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  border-radius: 4px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.2);
+  background: #cad5e0;
 `;
 
 function MyDashboardContainer() {
+  const dispatch = useDispatch();
   const cards = [
     { id: 1, title: "Temperature", value: "32°C" },
     { id: 2, title: "Humidity", value: "16%" },
@@ -27,13 +31,18 @@ function MyDashboardContainer() {
     { id: 4, title: "Other gases", value: "118 PPM" },
   ];
 
+  const handleGetData = () => {
+    console.log("GET DATA");
+    dispatch(getSensorData());
+  };
+
   return (
     <ViewContainer>
       <Body1 lineHeight={32} fontWeight="700" color="#0D1829">
         MY Dashboard
       </Body1>
 
-      <Flex gap={2} marginTop={4}>
+      <Flex gap={2} marginTop={4} marginBottom={2}>
         {cards.map((item) => (
           <Card key={item.id}>
             <Body3 fontWeight="400">{item.title}</Body3>
@@ -41,6 +50,8 @@ function MyDashboardContainer() {
           </Card>
         ))}
       </Flex>
+
+      <Button text="Get Data" onClick={handleGetData} />
     </ViewContainer>
   );
 }
