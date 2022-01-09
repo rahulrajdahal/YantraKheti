@@ -6,7 +6,7 @@ axios.defaults.baseURL = "http://localhost:5000";
 export default class Api {
   async registerUser(payload: any) {
     try {
-      const res = axios.post("/auth", payload);
+      const res = axios.post("/auth/register", payload);
       console.log(`Register api response: ${res}`);
       const data = get(res, "data");
       return data;
@@ -42,7 +42,7 @@ export default class Api {
 
   async getSensorValues() {
     try {
-      const res = axios.get("/getSensorValues");
+      const res = axios.get("/arduino/getSensorValue");
       console.log(`GetSensorValue api response: ${res}`);
       const data = get(res, "data");
       return data;
@@ -54,7 +54,7 @@ export default class Api {
 
   async setSensorValues(payload: any) {
     try {
-      const res = axios.post("/setSensorValues", payload);
+      const res = axios.post("/arduino/setSensorValue", payload);
       console.log(`SetSensorValue api response: ${res}`);
       const data = get(res, "data");
       return data;
