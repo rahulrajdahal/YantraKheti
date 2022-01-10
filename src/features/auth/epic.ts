@@ -42,7 +42,7 @@ export const loginEpic = (action$: any) =>
     flatMap(async (action: any) => {
       try {
         const response = await api.loginUser(action.payload);
-        return { payload: response };
+        return { payload: response, navigate: action.navigate };
       } catch (e) {
         console.log(e);
         return false;
@@ -50,6 +50,7 @@ export const loginEpic = (action$: any) =>
     }),
     map((action: any) => {
       if (action.payload) {
+        action.navigate("/dashboard");
         return { type: LOGIN_USER_SUCCESS, payload: action.payload };
       } else {
         return { type: LOGIN_USER_FAILURE, payload: false };

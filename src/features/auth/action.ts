@@ -14,8 +14,8 @@ export const register = (payload: any) => {
   return { type: REGISTER_USER_LOADING, payload };
 };
 
-export const login = (payload: any) => {
-  return { type: LOGIN_USER_LOADING, payload };
+export const login = (payload: any, navigate: any) => {
+  return { type: LOGIN_USER_LOADING, payload, navigate };
 };
 
 export const logut = () => {

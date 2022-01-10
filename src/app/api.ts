@@ -1,7 +1,11 @@
 import axios from "axios";
 import { get } from "lodash";
 
-axios.defaults.baseURL = "http://localhost:5000";
+axios.defaults.baseURL = "http://192.168.1.20:8000";
+
+const HeaderData = async () => {
+  const token = localStorage.getItem("jwt");
+};
 
 export default class Api {
   async registerUser(payload: any) {
@@ -42,7 +46,7 @@ export default class Api {
 
   async getSensorValues() {
     try {
-      const res = axios.get("/arduino/getSensorValue");
+      const res = await axios.get("/arduino/getSensorValue");
       console.log(`GetSensorValue api response: ${res}`);
       const data = get(res, "data");
       return data;

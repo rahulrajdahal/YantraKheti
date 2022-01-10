@@ -30,13 +30,13 @@ function AuthPage() {
     password: string;
   }>({ name: "", email: "", password: "" });
 
-  // const handleSubmit = () => {
-  //   if (isSignup) {
-  //     dispatch(register(form));
-  //   } else {
-  //     dispatch(login(form));
-  //   }
-  // };
+  const handleSubmit = () => {
+    if (isSignup) {
+      dispatch(register(form));
+    } else {
+      dispatch(login(form,navigate));
+    }
+  };
 
   return (
     <>
@@ -146,8 +146,8 @@ function AuthPage() {
             text={isSignup ? "Create Account" : "Log In"}
             background="#16AD4D"
             width="100%"
-            onClick={() => navigate("/dashboard")}
-            // onClick={handleSubmit}
+            // onClick={() => navigate("/dashboard")}
+            onClick={handleSubmit}
           />
         </Flex>
       </Flex>

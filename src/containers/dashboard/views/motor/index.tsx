@@ -4,6 +4,8 @@ import Switch from "react-switch";
 import { Flex } from "components";
 import { Body1, Body3 } from "components/texts";
 import { ViewContainer } from "../mydashboard";
+import { useDispatch } from "react-redux";
+import { setSensorData } from "features/sensor/action";
 
 function MotorContainer() {
   const [motor1checked, setMotor1Checked] = useState(true);
@@ -31,6 +33,26 @@ function MotorContainer() {
     },
   ];
 
+  const [motorActive, setMotorActive] = useState<boolean>(false);
+  const [fanActive, setFanActive] = useState<boolean>(false);
+  const actuators = [
+    {
+      id: "1",
+      title: "Lights",
+      active: motorActive,
+      setActive: setMotorActive,
+      command: motorActive ? "loff" : "lon",
+    },
+    {
+      id: "2",
+      title: "Fan",
+      active: fanActive,
+      setActive: setFanActive,
+      command: fanActive ? "foff" : "fon",
+    },
+  ];
+
+  const dispatch = useDispatch();
   return (
     <ViewContainer>
       <Body1 lineHeight={32} fontWeight="700" color="#0D1829">
@@ -44,6 +66,21 @@ function MotorContainer() {
             <Switch
               checked={item.active}
               onChange={() => item.setActive(!item.active)}
+            />
+          </Flex>
+        ))}
+      </Flex>
+
+      <Flex>
+        {actuators.map((item) => (
+          <Flex gap={0.5} key={item.id}>
+            <Body3>{item.title}</Body3>
+            <Switch
+              checked={item.active}
+              onChange={() => {
+                item.setActive((prev) => !prev);
+                dispatch(setSensorData({ command: item.command }));
+              }}
             />
           </Flex>
         ))}
