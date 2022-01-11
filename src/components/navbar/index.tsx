@@ -4,16 +4,22 @@ import { useNavigate } from "react-router-dom";
 import { Button, Flex } from "components";
 import { Body3, Body5 } from "components/texts";
 import { LogoIcon } from "assets/icons";
+import styled from "styled-components";
+
+const Container = styled(Flex)`
+  padding: 1.25rem 0;
+  height: 6.25rem;
+  margin: 0 12.5%;
+`;
 
 export default function Navbar() {
   const navigate = useNavigate();
 
   return (
-    <Flex
+    <Container
       display="flex"
       alignItems="center"
       justifyContent="space-between"
-      style={{ padding: "1.625rem 0", height: "6.25rem", margin: "0 15rem" }}
     >
       <Flex gap={0.75} alignItems="center" onClick={() => navigate("/")}>
         <LogoIcon />
@@ -25,6 +31,6 @@ export default function Navbar() {
         <Body5>Features</Body5>
         <Button text="Get Started" onClick={() => navigate("/auth")} />
       </Flex>
-    </Flex>
+    </Container>
   );
 }

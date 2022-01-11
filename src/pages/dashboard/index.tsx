@@ -39,7 +39,7 @@ function DashboardPage() {
   };
 
   return (
-    <Flex gap={2}>
+    <Flex gap={2} width="100%">
       <SidebarContainer view={view} setView={setView} />
       {getView()}
     </Flex>

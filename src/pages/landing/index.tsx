@@ -32,12 +32,7 @@ function LandingPage() {
       <Navbar />
       <HeroContainer />
 
-      <Flex
-        gap={6.25}
-        marginTop={2}
-        alignItems="center"
-        style={{ padding: "0 5%" }}
-      >
+      <Flex gap={6.25} style={{ margin: "4rem 15%" }}>
         <ArduinoImage src={arduinoImage} alt="kits" />
 
         <Flex gap={2.5} direction="column" alignItems="flex-start">
@@ -47,8 +42,6 @@ function LandingPage() {
             solve novel problems, and thus make them confident in the face of
             nobel and unexpected problems.
           </Body1>
-
-          <Button text="Shop for Karkhana Kits" background="#D83A56" />
         </Flex>
       </Flex>
 

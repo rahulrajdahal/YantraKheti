@@ -9,7 +9,7 @@ const ImageContainer = styled.div`
     url(${heroImage}) center/cover;
   border-radius: 24px;
   height: 38.75rem;
-  margin: 0 15rem;
+  margin: 0 12.5%;
 
   display: flex;
   flex-direction: column;

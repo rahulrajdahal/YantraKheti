@@ -20,6 +20,7 @@ interface IFlexProps {
   gap?: number;
   wrap?: "wrap" | "no-wrap";
   onClick?(): any;
+  rest?: any;
 }
 
 type IContainerProps = {
@@ -60,6 +61,7 @@ const Flex = (props: IFlexProps) => {
     gap = 0,
     wrap = "no-wrap",
     onClick,
+    ...rest
   } = props;
 
   return (
@@ -75,6 +77,7 @@ const Flex = (props: IFlexProps) => {
       marginBottom={marginBottom}
       onClick={onClick}
       style={style}
+      {...rest}
     >
       {children}
     </Container>

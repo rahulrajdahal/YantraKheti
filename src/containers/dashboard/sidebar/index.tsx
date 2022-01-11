@@ -103,7 +103,7 @@ function SidebarContainer({ view, setView }: ISidebarContainerProps) {
   return (
     <Flex
       direction="column"
-      width="13%"
+      width="15%"
       style={{
         background: "#030913",
         height: "100vh",

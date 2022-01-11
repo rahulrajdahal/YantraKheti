@@ -11,7 +11,7 @@ export const ViewContainer = styled.div`
 `;
 
 const Card = styled.div`
-  min-width: 23rem;
+  min-width: 30%;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -66,7 +66,13 @@ function MyDashboardContainer() {
 
       <Body2>{split}</Body2>
 
-      <Flex gap={2} marginTop={4} marginBottom={2}>
+      <Flex
+        width="100%"
+        justifyContent="space-between"
+        gap={2}
+        marginTop={4}
+        marginBottom={2}
+      >
         {cards.map((item) => (
           <Card key={item.id}>
             <Body3 fontWeight="400">{item.title}</Body3>

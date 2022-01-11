@@ -34,7 +34,7 @@ function AuthPage() {
     if (isSignup) {
       dispatch(register(form));
     } else {
-      dispatch(login(form,navigate));
+      dispatch(login(form, navigate));
     }
   };
 
@@ -87,7 +87,12 @@ function AuthPage() {
           <img
             src={authImage}
             alt="login"
-            style={{ position: "absolute", bottom: 0, left: "25%" }}
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: "23%",
+              width: "50%",
+            }}
           />
         </LeftContainer>
 
@@ -96,6 +101,7 @@ function AuthPage() {
           width="26%"
           style={{
             margin: "0 5%",
+            zIndex: 2,
           }}
         >
           <Title4
