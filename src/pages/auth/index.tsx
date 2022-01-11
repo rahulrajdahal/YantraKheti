@@ -90,8 +90,8 @@ function AuthPage() {
             style={{
               position: "absolute",
               bottom: 0,
-              left: "23%",
-              width: "50%",
+              left: "25%",
+              width: "45%",
             }}
           />
         </LeftContainer>

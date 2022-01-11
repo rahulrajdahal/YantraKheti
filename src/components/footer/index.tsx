@@ -28,8 +28,8 @@ function Footer() {
       id: 1,
       title: "PROGRAMS",
       links: [
-        { id: 1, link: "Karkhana Science" },
-        { id: 2, link: "Karkhana STEM Books" },
+        { id: 1, link: "YantriKheti Science" },
+        { id: 2, link: "YantriKheti STEM Books" },
         { id: 3, link: "Robotics & Electronics" },
         { id: 4, link: "Story & Enginerring" },
         { id: 5, link: "Engineering Adv" },

@@ -32,10 +32,10 @@ function LandingPage() {
       <Navbar />
       <HeroContainer />
 
-      <Flex gap={6.25} style={{ margin: "4rem 15%" }}>
+      <Flex gap={6.25} alignItems="center" style={{ margin: "4rem 15%" }}>
         <ArduinoImage src={arduinoImage} alt="kits" />
 
-        <Flex gap={2.5} direction="column" alignItems="flex-start">
+        <Flex gap={2.5} direction="column">
           <Body1 style={{ width: 600 }} lineHeight={48}>
             We create learning kits for middle-school students as making teaches
             children to be resourceful, to reshape their own environment, to
