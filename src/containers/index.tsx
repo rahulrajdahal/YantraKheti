@@ -1,5 +1,6 @@
 // landing
 export { default as HeroContainer } from "./landing/hero";
+export { default as FeaturesContainer } from "./landing/features";
 
 // dashboard
 export { default as SidebarContainer } from "./dashboard/sidebar";

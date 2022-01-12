@@ -14,6 +14,7 @@ import {
   temperatureImage,
 } from "assets/images";
 import Footer from "components/footer";
+import { FeaturesContainer } from "containers";
 
 const ArduinoImage = styled.img`
   width: 50%;
@@ -31,8 +32,9 @@ function LandingPage() {
     <div>
       <Navbar />
       <HeroContainer />
+      <FeaturesContainer />
 
-      <Flex gap={6.25} alignItems="center" style={{ margin: "4rem 15%" }}>
+      {/* <Flex gap={6.25} alignItems="center" style={{ margin: "4rem 15%" }}>
         <ArduinoImage src={arduinoImage} alt="kits" />
 
         <Flex gap={2.5} direction="column">
@@ -43,9 +45,9 @@ function LandingPage() {
             nobel and unexpected problems.
           </Body1>
         </Flex>
-      </Flex>
+      </Flex> */}
 
-      <Flex
+      {/* <Flex
         justifyContent="space-between"
         marginBottom={4}
         style={{ padding: "2rem 15%", background: "grey" }}
@@ -68,7 +70,7 @@ function LandingPage() {
           </div>
         ))}
       </Flex>
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }
