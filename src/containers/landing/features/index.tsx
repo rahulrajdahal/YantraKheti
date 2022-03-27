@@ -2,7 +2,16 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Flex } from "components";
 import { Body1, Body2, Body4, Body5, Title3, Title4 } from "components/texts";
-import { DashboardIcon } from "meistericons";
+import {
+  ArchiveAddIcon,
+  BedIcon,
+  DashboardIcon,
+  NoEntryIcon,
+  NotificationIcon,
+  SearchAddIcon,
+  SearchIcon,
+  SettingsHorizontalIcon,
+} from "meistericons";
 
 const Container = styled(Flex)`
   background: #f0f5f9;
@@ -48,50 +57,50 @@ function FeaturesContainer() {
     },
     {
       id: 2,
-      icon: <DashboardIcon />,
-      feature: "Humidity",
+      icon: <ArchiveAddIcon />,
+      feature: "Temperature",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
       background: "#D0EFDB",
     },
     {
       id: 3,
-      icon: <DashboardIcon />,
-      feature: "Humidity",
+      icon: <SearchIcon />,
+      feature: "Co2",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
       background: "#F8CCDE",
     },
     {
       id: 4,
-      icon: <DashboardIcon />,
-      feature: "Humidity",
+      icon: <SearchAddIcon />,
+      feature: "Harmful Gases",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
       background: "#FDE3CD",
     },
     {
       id: 5,
-      icon: <DashboardIcon />,
-      feature: "Humidity",
+      icon: <NotificationIcon />,
+      feature: "Fire detection",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
       background: "#D2DCFA",
     },
     {
       id: 6,
-      icon: <DashboardIcon />,
-      feature: "Humidity",
+      icon: <SettingsHorizontalIcon />,
+      feature: "Accumulators",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
       background: "#D0EFDB",
     },
     {
       id: 7,
-      icon: <DashboardIcon />,
-      feature: "Humidity",
+      icon: <NoEntryIcon />,
+      feature: "Web App",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
       background: "#F8CCDE",
     },
     {
       id: 8,
-      icon: <DashboardIcon />,
-      feature: "Humidity",
+      icon: <BedIcon />,
+      feature: "IOT",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
       background: "#FDE3CD",
     },

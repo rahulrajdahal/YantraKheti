@@ -5,6 +5,18 @@ axios.defaults.baseURL = "http://192.168.1.20:8000";
 
 const HeaderData = async () => {
   const token = localStorage.getItem("jwt");
+
+  if (token === null) {
+    return {
+      "Content-Type": "application/json",
+      Authorization: "",
+    };
+  } else {
+    return {
+      "Content-Type": "application/json",
+      Authorization: `Token ${token}`,
+    };
+  }
 };
 
 export default class Api {
@@ -25,6 +37,7 @@ export default class Api {
       const res = axios.post("/auth/login", payload);
       console.log(`Login api response: ${res}`);
       const data = get(res, "data");
+      localStorage.setItem("jwt", data.jwt);
       return data;
     } catch (e) {
       console.log(`Login api error: ${e}`);

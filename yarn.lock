@@ -5927,10 +5927,10 @@ media-typer@0.3.0:
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
 
-meistericons@^0.1.35:
-  version "0.1.35"
-  resolved "https://registry.yarnpkg.com/meistericons/-/meistericons-0.1.35.tgz#47a85858dd1da16bef080edcb22dc5a21cc92ca4"
-  integrity sha512-anUAggzcUUxoBLg/yK2aQ6TFCGaEO9nu2CSJbDesUuiOzppoB2YsWQTD4QzGfu/A39LRiTZGBwCsD1Q2mn1xag==
+meistericons@^0.1.40:
+  version "0.1.40"
+  resolved "https://registry.yarnpkg.com/meistericons/-/meistericons-0.1.40.tgz#b466509f4fe0ba5f9105420608eb41033b992fb6"
+  integrity sha512-WTuKSpVNLKOCMkVA61uYdeMoHUnu8LD/YtaeQJFVwot8B1Jc78/u9q4ILgV6KrB6t6vXC+dJaNS7LNRKlked/Q==
 
 memfs@^3.1.2, memfs@^3.2.2:
   version "3.4.1"
