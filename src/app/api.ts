@@ -1,7 +1,7 @@
 import axios from "axios";
 import { get } from "lodash";
 
-axios.defaults.baseURL = "http://192.168.1.20:8000";
+axios.defaults.baseURL = "http://localhost:8000";
 
 const HeaderData = async () => {
   const token = localStorage.getItem("jwt");
@@ -34,9 +34,10 @@ export default class Api {
 
   async loginUser(payload: any) {
     try {
-      const res = axios.post("/auth/login", payload);
+      const res = await axios.post("/auth/login", payload);
       console.log(`Login api response: ${res}`);
       const data = get(res, "data");
+      
       localStorage.setItem("jwt", data.jwt);
       return data;
     } catch (e) {
