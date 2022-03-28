@@ -59,7 +59,9 @@ export default class Api {
 
   async getSensorValues() {
     try {
-      const res = await axios.get("/arduino/getSensorValue");
+      const res = await axios.get("/arduino/getSensorValue", {
+        headers: await HeaderData(),
+      });
       console.log(`GetSensorValue api response: ${res}`);
       const data = get(res, "data");
       return data;
@@ -71,7 +73,9 @@ export default class Api {
 
   async setSensorValues(payload: any) {
     try {
-      const res = axios.post("/arduino/setSensorValue", payload);
+      const res = axios.post("/arduino/setSensorValue", payload, {
+        headers: await HeaderData(),
+      });
       console.log(`SetSensorValue api response: ${res}`);
       const data = get(res, "data");
       return data;
