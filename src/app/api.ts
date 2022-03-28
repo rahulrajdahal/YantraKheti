@@ -14,7 +14,7 @@ const HeaderData = async () => {
   } else {
     return {
       "Content-Type": "application/json",
-      Authorization: `Token ${token}`,
+      Authorization: `Token 086542064ff23c2e4e4d220b212e3697350026f6`,
     };
   }
 };
@@ -37,7 +37,7 @@ export default class Api {
       const res = await axios.post("/auth/login", payload);
       console.log(`Login api response: ${res}`);
       const data = get(res, "data");
-      
+
       localStorage.setItem("jwt", data.jwt);
       return data;
     } catch (e) {

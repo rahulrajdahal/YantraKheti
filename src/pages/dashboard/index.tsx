@@ -3,7 +3,7 @@ import { Flex } from "components";
 import { SidebarContainer } from "containers";
 import {
   MyDashboardContainer,
-  HumidityContainer,
+  SeedlingContainer,
   TemperatureContainer,
   MotorContainer,
   WaterpumpContainer,
@@ -18,8 +18,8 @@ function DashboardPage() {
       case "MY Dashboard":
         return <MyDashboardContainer />;
 
-      case "Humidity":
-        return <HumidityContainer />;
+      case "Seedling":
+        return <SeedlingContainer />;
 
       case "Temperature":
         return <TemperatureContainer />;

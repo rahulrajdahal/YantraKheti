@@ -29,10 +29,10 @@ function LandingPage() {
   ];
 
   return (
-    <div>
+    <>
       <Navbar />
-      <HeroContainer />
-      <FeaturesContainer />
+      {/* <HeroContainer /> */}
+      {/* <FeaturesContainer /> */}
 
       {/* <Flex gap={6.25} alignItems="center" style={{ margin: "4rem 15%" }}>
         <ArduinoImage src={arduinoImage} alt="kits" />
@@ -70,8 +70,9 @@ function LandingPage() {
           </div>
         ))}
       </Flex>
-      <Footer /> */}
-    </div>
+    */}
+      <Footer />
+    </>
   );
 }
 

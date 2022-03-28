@@ -17,9 +17,23 @@ const Container = styled.section`
 
 const Links = styled.div`
   display: flex;
-  gap: 15rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 1rem;
+  width: 100%;
+  gap: 2rem;
   padding-bottom: 3.75rem;
   border-bottom: 1px solid #2d2d2d;
+
+  @media (min-width: 1100px) {
+    gap: 5rem;
+    padding: 0 10rem;
+  }
+
+  @media (min-width: 1920px) {
+    gap: 15rem;
+    padding: 0 10rem;
+  }
 `;
 
 function Footer() {
@@ -101,7 +115,7 @@ function Footer() {
         ))}
       </Links>
 
-      <Flex width={"65%"}>
+      <Flex width={"85%"}>
         <Body6 lineHeight={20} fontWeight="500" color="#fff">
           Copyright 2021. DahalInc. All Rights Reserved.
         </Body6>

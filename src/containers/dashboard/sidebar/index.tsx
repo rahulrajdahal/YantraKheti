@@ -48,11 +48,11 @@ function SidebarContainer({ view, setView }: ISidebarContainerProps) {
       icon: (
         <HumidifierIcon
           style={{
-            color: view === "Humidity" ? "#F8FAFC" : "#91A4B7",
+            color: view === "Seedling" ? "#F8FAFC" : "#91A4B7",
           }}
         />
       ),
-      link: "Humidity",
+      link: "Seedling",
     },
     {
       id: 3,

@@ -16,13 +16,39 @@ import {
 const Container = styled(Flex)`
   background: #f0f5f9;
   padding: 7.29% 12.5%;
+  flex-direction: column;
+  gap: 5rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 const Features = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 50%);
-  gap: 6.25rem;
-  width: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    gap: 6.25rem;
+    width: 50%;
+  }
+`;
+
+const FeaturesBody = styled(Body4)`
+  color: #030913;
+  width: 100%;
+
+  font-size: 14px;
+  line-height: 20px;
+  @media (min-width: 768px) {
+    line-height: 32px;
+    font-size: 18px;
+    width: 70%;
+  }
 `;
 
 interface IIconContainerProps {
@@ -41,7 +67,15 @@ const IconContainer = styled.div<IIconContainerProps>`
 `;
 
 const StickyContainer = styled(Flex)`
-  position: sticky;
+  flex-direction: column;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 50%;
+
+    position: sticky;
+    top: 0;
+  }
 `;
 
 function FeaturesContainer() {
@@ -108,7 +142,7 @@ function FeaturesContainer() {
 
   return (
     <Container marginTop={7.5}>
-      <StickyContainer direction="column" width="50%">
+      <StickyContainer>
         <Title4
           color="#030913"
           fontWeight="700"
@@ -118,11 +152,11 @@ function FeaturesContainer() {
         >
           Our Top Features
         </Title4>
-        <Body4 lineHeight={32} color="#030913" style={{ width: "70%" }}>
+        <FeaturesBody>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam.
-        </Body4>
+        </FeaturesBody>
       </StickyContainer>
 
       <Features>
@@ -136,6 +170,7 @@ function FeaturesContainer() {
                 {item.feature}
               </Body1>
             </Flex>
+
             <Body5 color="#030913" lineHeight={24}>
               {item.desc}
             </Body5>

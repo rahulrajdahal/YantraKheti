@@ -6,7 +6,7 @@ type IProtectedRoute = {
   children?: any;
   redirect?: string;
 };
-function ProtectedRoute({ jwt, children, redirect = "/" }: IProtectedRoute) {
+function ProtectedRoute({ jwt, children, redirect = "/auth" }: IProtectedRoute) {
   if (!jwt) {
     return <Navigate to={redirect} replace />;
   }
