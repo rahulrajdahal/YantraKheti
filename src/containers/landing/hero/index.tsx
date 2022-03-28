@@ -41,8 +41,11 @@ const ImageTitle = styled(Title4)`
   font-size: 24px;
   line-height: 36px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1368px) {
     line-height: 72px;
+  }
+
+  @media (min-width: 1620px) {
     width: 60%;
   }
 `;
@@ -54,6 +57,7 @@ const ImageInfo = styled(Body4)`
   line-height: 20px;
 
   @media (min-width: 768px) {
+    font-size: 18px;
     line-height: 32px;
     width: 60%;
   }

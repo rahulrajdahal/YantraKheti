@@ -15,12 +15,13 @@ import {
 
 const Container = styled(Flex)`
   background: #f0f5f9;
-  padding: 7.29% 12.5%;
+  padding: 3% 6.5%;
   flex-direction: column;
   gap: 5rem;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1368px) {
     flex-direction: row;
+    padding: 7.29% 12.5%;
   }
 `;
 
@@ -28,13 +29,16 @@ const Features = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 5rem;
 
-  @media (min-width: 768px) {
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    gap: 6.25rem;
+  @media (min-width: 1368px) {
     width: 50%;
+  }
+
+  @media (min-width: 1920px) {
+    display: grid;
+    grid-template-columns: repeat(2, 90%);
+    gap: 6.25rem;
   }
 `;
 
@@ -70,9 +74,8 @@ const StickyContainer = styled(Flex)`
   flex-direction: column;
   width: 100%;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1368px) {
     width: 50%;
-
     position: sticky;
     top: 0;
   }
