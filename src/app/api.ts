@@ -22,7 +22,7 @@ const HeaderData = async () => {
 export default class Api {
   async registerUser(payload: any) {
     try {
-      const res = axios.post("/auth/register", payload);
+      const res = await axios.post("/auth/register", payload);
       console.log(`Register api response: ${res}`);
       const data = get(res, "data");
       return data;
@@ -34,7 +34,7 @@ export default class Api {
 
   async loginUser(payload: any) {
     try {
-      const res = axios.post("/auth/login", payload);
+      const res = await axios.post("/auth/login", payload);
       console.log(`Login api response: ${res}`);
       const data = get(res, "data");
       localStorage.setItem("jwt", data.jwt);
@@ -47,7 +47,7 @@ export default class Api {
 
   async logoutUser() {
     try {
-      const res = axios.post("/auth/logout");
+      const res = await axios.post("/auth/logout");
       console.log(`Login api response: ${res}`);
       const data = get(res, "data");
       return data;
