@@ -37,7 +37,7 @@ const Features = styled.div`
 
   @media (min-width: 1920px) {
     display: grid;
-    grid-template-columns: repeat(2, 90%);
+    grid-template-columns: repeat(2, 50%);
     gap: 6.25rem;
   }
 `;

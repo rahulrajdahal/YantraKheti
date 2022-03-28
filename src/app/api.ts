@@ -74,7 +74,7 @@ export default class Api {
 
   async setSensorValues(payload: any) {
     try {
-      const res = axios.post("/arduino/setSensorValue", payload, {
+      const res = await axios.post("/arduino/setSensorValue", payload, {
         headers: await HeaderData(),
       });
       console.log(`SetSensorValue api response: ${res}`);
@@ -82,6 +82,20 @@ export default class Api {
       return data;
     } catch (e) {
       console.log(`SetSensorValue api error: ${e}`);
+      throw e;
+    }
+  }
+
+  async getSeedData(payload: any) {
+    try {
+      const res = await axios.post("/detect/detectsedling", payload, {
+        headers: await HeaderData(),
+      });
+      console.log(`GET SEED DAT api response: ${res}`);
+      const data = get(res, "data");
+      return data;
+    } catch (e) {
+      console.log(`GET SEED DAT api error: ${e}`);
       throw e;
     }
   }

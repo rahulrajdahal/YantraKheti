@@ -16,18 +16,7 @@ import {
 import Footer from "components/footer";
 import { FeaturesContainer } from "containers";
 
-const ArduinoImage = styled.img`
-  width: 50%;
-`;
-
 function LandingPage() {
-  const features = [
-    { id: 1, title: "Humidity", img: humidImage },
-    { id: 2, title: "Temperature", img: temperatureImage },
-    { id: 3, title: "CO2", img: co2Image },
-    { id: 4, title: "OtherGases", img: otherImage },
-  ];
-
   return (
     <>
       <Navbar />
