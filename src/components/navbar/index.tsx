@@ -29,7 +29,7 @@ export default function Navbar() {
       <Flex gap={3} alignItems="center">
         <Body5>How it Works</Body5>
         <Body5>Features</Body5>
-        <Button text="Get Started" onClick={() => navigate("/auth")} />
+        <Button text="Get Started" onClick={() => navigate("/dashboard")} />
       </Flex>
     </Container>
   );

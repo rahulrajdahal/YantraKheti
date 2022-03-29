@@ -120,6 +120,7 @@ function SidebarContainer({ view, setView }: ISidebarContainerProps) {
           paddingBottom: "0.81rem",
           borderBottom: "1px solid #1C2A3A",
         }}
+        onClick={() => navigate("/")}
       >
         <LogoIcon />
         <Flex direction="column">

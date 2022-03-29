@@ -1,7 +1,7 @@
 import axios from "axios";
 import { get } from "lodash";
 
-axios.defaults.baseURL = "http://192.168.1.20:8000";
+axios.defaults.baseURL = "http://192.168.101.13:8000";
 
 const HeaderData = async () => {
   const token = localStorage.getItem("jwt");

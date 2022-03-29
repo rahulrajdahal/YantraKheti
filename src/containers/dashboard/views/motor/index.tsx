@@ -59,7 +59,7 @@ function MotorContainer() {
         MotorContainer
       </Body1>
 
-      <Flex gap={3} marginTop={8}>
+      {/* <Flex gap={3} marginTop={8}>
         {motors.map((item) => (
           <Flex gap={0.5} key={item.id}>
             <Body3>{item.title}</Body3>
@@ -69,9 +69,9 @@ function MotorContainer() {
             />
           </Flex>
         ))}
-      </Flex>
+      </Flex> */}
 
-      <Flex>
+      <Flex gap={4} marginTop={4}>
         {actuators.map((item) => (
           <Flex gap={0.5} key={item.id}>
             <Body3>{item.title}</Body3>

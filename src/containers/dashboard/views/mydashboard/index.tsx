@@ -64,7 +64,7 @@ function MyDashboardContainer() {
         MY Dashboard
       </Body1>
 
-      <Body2>{split}</Body2>
+      <Body2>{sensorMessage}</Body2>
 
       <Flex
         width="100%"
