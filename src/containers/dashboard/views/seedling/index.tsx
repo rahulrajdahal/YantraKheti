@@ -13,6 +13,8 @@ function SeedlingContainer() {
 
   const seedlingState = useSelector((state: RootStateOrAny) => state.seedling);
 
+  console.log(seedlingState)
+  
   return (
     <ViewContainer>
       <Body1 lineHeight={32} fontWeight="700" color="#0D1829" marginBottom={5}>
@@ -24,7 +26,7 @@ function SeedlingContainer() {
           type="file"
           onChange={(e: any) => {
             setForm(e.target.files[0]);
-          }}
+          }} 
         />
         <Button
           text="Seed Data"
@@ -37,7 +39,8 @@ function SeedlingContainer() {
         />
       </Flex>
 
-      {seedlingState.loading ? <Title1>Loading...</Title1> : seedlingState.data}
+      {seedlingState.loading ? <Title1>Loading...</Title1> :<p> {seedlingState.data?.predcitedValue}</p>}
+
     </ViewContainer>
   );
 }

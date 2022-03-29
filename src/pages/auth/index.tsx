@@ -152,7 +152,9 @@ function AuthPage() {
     password: string;
   }>({ name: "", email: "", password: "" });
 
-  const handleSubmit = () => {
+  const handleSubmit = (e:any) => {
+    console.log(e);
+    e.preventDefault();
     if (isSignup) {
       dispatch(register(form));
     } else {

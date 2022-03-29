@@ -34,9 +34,10 @@ export const getSensorDataEpic = (action$: any) =>
 
 export const setSensorDataEpic = (action$: any) =>
   action$.pipe(
-    ofType(GET_SENSOR_LOADING),
+    ofType(SET_SENSOR_LOADING),
     flatMap(async (action: any) => {
       try {
+        
         const response = await api.setSensorValues(action.payload);
         return { payload: response };
       } catch (e) {

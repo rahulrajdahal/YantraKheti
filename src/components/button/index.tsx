@@ -35,7 +35,7 @@ interface IButtonProps {
   color?: string;
   background?: string;
   width?: string;
-  onClick?(): any;
+  onClick?(e:any): any;
 }
 
 function Button({
