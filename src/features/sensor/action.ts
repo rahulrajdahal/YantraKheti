@@ -11,6 +11,5 @@ export const getSensorData = () => {
 };
 
 export const setSensorData = (payload: any) => {
-  
   return { type: SET_SENSOR_LOADING, payload };
 };

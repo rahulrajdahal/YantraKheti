@@ -49,11 +49,11 @@ export default class Api {
   async logoutUser() {
     try {
       const res = await axios.post("/auth/logout");
-      console.log(`Login api response: ${res}`);
+      console.log(`Logout api response: ${res}`);
       const data = get(res, "data");
       return data;
     } catch (e) {
-      console.log(`Login api error: ${e}`);
+      console.log(`Logout api error: ${e}`);
       throw e;
     }
   }

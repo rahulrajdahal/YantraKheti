@@ -2,15 +2,19 @@ import React, { useState } from "react";
 import Switch from "react-switch";
 
 import { Flex } from "components";
-import { Body1, Body3 } from "components/texts";
+import { Body1, Body3, Body4 } from "components/texts";
 import { ViewContainer } from "../mydashboard";
-import { useDispatch } from "react-redux";
+import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
 import { setSensorData } from "features/sensor/action";
 
 function MotorContainer() {
   const [motor1checked, setMotor1Checked] = useState(true);
   const [motor2checked, setMotor2Checked] = useState(false);
   const [motor3checked, setMotor3Checked] = useState(false);
+
+  const setSensorState = useSelector(
+    (state: RootStateOrAny) => state.setSensor
+  );
 
   const motors = [
     {
@@ -59,7 +63,7 @@ function MotorContainer() {
         Motors And Acctuators
       </Body1>
 
-      <Flex gap={3} marginTop={8} marginBottom={5}>
+      {/* <Flex gap={3} marginTop={8} marginBottom={5}>
         {motors.map((item) => (
           <Flex gap={0.5} key={item.id}>
             <Body3>{item.title}</Body3>
@@ -69,7 +73,11 @@ function MotorContainer() {
             />
           </Flex>
         ))}
-      </Flex>
+      </Flex> */}
+
+      <Body4 marginTop={4} marginBottom={2}>
+        Control Your Lights and Fans.
+      </Body4>
 
       <Flex gap={3}>
         {actuators.map((item) => (

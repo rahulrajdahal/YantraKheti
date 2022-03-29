@@ -8,6 +8,7 @@ import { getSensorData } from "features/sensor/action";
 
 export const ViewContainer = styled.div`
   margin: 2rem;
+  width: 50%;
 `;
 
 const Card = styled.div`
