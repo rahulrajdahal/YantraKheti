@@ -54,17 +54,17 @@ function SidebarContainer({ view, setView }: ISidebarContainerProps) {
       ),
       link: "Seedling",
     },
-    {
-      id: 3,
-      icon: (
-        <ThermometerIcon
-          style={{
-            color: view === "Temperature" ? "#F8FAFC" : "#91A4B7",
-          }}
-        />
-      ),
-      link: "Temperature",
-    },
+    // {
+    //   id: 3,
+    //   icon: (
+    //     <ThermometerIcon
+    //       style={{
+    //         color: view === "Temperature" ? "#F8FAFC" : "#91A4B7",
+    //       }}
+    //     />
+    //   ),
+    //   link: "Temperature",
+    // },
     {
       id: 4,
       icon: (
@@ -76,28 +76,28 @@ function SidebarContainer({ view, setView }: ISidebarContainerProps) {
       ),
       link: "Motor",
     },
-    {
-      id: 5,
-      icon: (
-        <WaterwellIcon
-          style={{
-            color: view === "Water Pump" ? "#F8FAFC" : "#91A4B7",
-          }}
-        />
-      ),
-      link: "Water Pump",
-    },
-    {
-      id: 6,
-      icon: (
-        <TreeIcon
-          style={{
-            color: view === "Plant Status" ? "#F8FAFC" : "#91A4B7",
-          }}
-        />
-      ),
-      link: "Plant Status",
-    },
+    // {
+    //   id: 5,
+    //   icon: (
+    //     <WaterwellIcon
+    //       style={{
+    //         color: view === "Water Pump" ? "#F8FAFC" : "#91A4B7",
+    //       }}
+    //     />
+    //   ),
+    //   link: "Water Pump",
+    // },
+    // {
+    //   id: 6,
+    //   icon: (
+    //     <TreeIcon
+    //       style={{
+    //         color: view === "Plant Status" ? "#F8FAFC" : "#91A4B7",
+    //       }}
+    //     />
+    //   ),
+    //   link: "Plant Status",
+    // },
   ];
 
   return (
@@ -167,7 +167,10 @@ function SidebarContainer({ view, setView }: ISidebarContainerProps) {
           gap={0.75}
           marginBottom={1.25}
           width="90%"
-          onClick={() => navigate("/auth")}
+          onClick={() => {
+            localStorage.clear();
+            navigate("/auth");
+          }}
           style={{
             cursor: "pointer",
             padding: "0.75rem 1rem",

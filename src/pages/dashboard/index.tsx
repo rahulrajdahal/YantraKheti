@@ -21,17 +21,17 @@ function DashboardPage() {
       case "Seedling":
         return <SeedlingContainer />;
 
-      case "Temperature":
-        return <TemperatureContainer />;
+      // case "Temperature":
+      //   return <TemperatureContainer />;
 
       case "Motor":
         return <MotorContainer />;
 
-      case "Water Pump":
-        return <WaterpumpContainer />;
+      // case "Water Pump":
+      //   return <WaterpumpContainer />;
 
-      case "Plant Status":
-        return <PlantstatusContainer />;
+      // case "Plant Status":
+      //   return <PlantstatusContainer />;
 
       default:
         return <MyDashboardContainer />;
