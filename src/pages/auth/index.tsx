@@ -152,7 +152,7 @@ function AuthPage() {
     password: string;
   }>({ name: "", email: "", password: "" });
 
-  const handleSubmit = (e:any) => {
+  const handleSubmit = (e: any) => {
     console.log(e);
     e.preventDefault();
     if (isSignup) {
@@ -161,6 +161,8 @@ function AuthPage() {
       dispatch(login(form, navigate));
     }
   };
+
+  // console.log("temp", temp);
 
   return (
     <Container>
