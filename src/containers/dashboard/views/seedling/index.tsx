@@ -57,12 +57,10 @@ function SeedlingContainer() {
         </Flex>
         {seedlingState.loading ? (
           <Body2 style={{ whiteSpace: "nowrap" }}>Analyzing seed...</Body2>
-        ) : seedlingState.data.length > 0 ? (
+        ) : (
           <Body2 style={{ whiteSpace: "nowrap" }}>
             Seedling identified as a {seedlingState.data?.predcitedValue} seed.
           </Body2>
-        ) : (
-          <Body3 style={{ whiteSpace: "nowrap" }}>Upload an image</Body3>
         )}
       </Flex>
     </ViewContainer>
