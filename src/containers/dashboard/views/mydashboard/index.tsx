@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 
 import { Body1, Body2, Body3, Body5 } from "components/texts";
@@ -22,14 +22,34 @@ const Card = styled.div`
   box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.2);
   background: #cad5e0;
 `;
+const makeitObject = (x: any):any => {
+
+  let y = "{"
+  for (let i = 0; i < x?.length; i++) {
+    if (x[i] === "'") {
+      y = y + '"'
+    } else if (x[i] === " ") {
+
+    }
+    else {
+      y = y + x[i]
+    }
+
+  }
+  let data =  JSON.parse(y)
+  return (Object.values(data))
+}
 
 function MyDashboardContainer() {
+  const [splitVal, setSplitVal] = useState("")
   const dispatch = useDispatch();
   const cards = [
-    { id: 1, title: "Temperature", value: "32°C" },
-    { id: 2, title: "Humidity", value: "16%" },
-    { id: 3, title: "CO2", value: "216 PPM" },
-    { id: 4, title: "Other gases", value: "118 PPM" },
+    { id: 0, title: "Temperature", value: "32°C" , dataName:"temp"},
+    { id: 1, title: "Humidity", value: "16%", dataName:"humidity" },
+    { id: 2, title: "Plant Height", value: "216 PPM" },
+    { id: 3, title: "IR Value", value: "118 PPM" },
+    { id: 4, title: "Co2", value: "1" },
+    { id: 5, title: "CO Toxic Gas", value: "10cm" }
   ];
 
   const sensorState = useSelector((state: any) => state.sensor);
@@ -37,11 +57,19 @@ function MyDashboardContainer() {
   // console.log(typeof sensorMessage);
   // console.log(sensorMessage.split("b"));
 
-  // const sensorData = sensorState?.data;
+  const sensorData = sensorState?.data;
   const split = sensorMessage?.substr(
     sensorMessage.indexOf("{") + 1,
     sensorMessage.lastIndexOf("}")
   );
+
+
+
+
+  
+
+  // const data  =  makeitObject(split)
+
 
   // console.log(split);
 
@@ -52,6 +80,22 @@ function MyDashboardContainer() {
     // console.log("GET DATA");
     dispatch(getSensorData());
   };
+  
+  // if(sensorState.loading){
+
+  // }
+  // else{
+  //   console.log(split)
+  //   let objectData = makeitObject(split)
+  //   console.log(objectData)
+  //   cards[0].value = objectData?.temp + " °C"
+  //   cards[1].value = objectData?.humidity + "%"
+  //   cards[2].value = objectData?.carbonDioxideValue + "ppm" || "CO2 Co2"
+  //   cards[3].value = objectData?.toxicGasSensorValue + "ppm"
+  //   cards[4].value = objectData?.irValue
+  //   cards[5].value = objectData?.plantHeight + "cm"
+  // }
+ 
 
   // PlantHeight cm
   // IRVALUE
@@ -65,22 +109,30 @@ function MyDashboardContainer() {
         MY Dashboard
       </Body1>
 
-      <Body2>{sensorState.loading?<h1>LOADING...</h1>: split}</Body2>
-
-      <Flex
+      <Body2>{sensorState.loading ? <h4>LOADING...</h4> : sensorState.data?.message ?
+      <Flex 
+        wrap = "wrap"
         width="100%"
         justifyContent="space-between"
         gap={2}
         marginTop={4}
         marginBottom={2}
-      >
-        {cards.map((item) => (
+      > 
+     
+          {cards.map((item, index) => (
+          
           <Card key={item.id}>
             <Body3 fontWeight="400">{item.title}</Body3>
-            <Body5 marginTop={0.5}>{item.value}</Body5>
+            <Body5 marginTop={0.5}>{makeitObject(split)[item.id]}</Body5>
           </Card>
         ))}
       </Flex>
+      :
+      <div>Lllll</div>  
+    }
+      </Body2>
+
+
 
       <Button text="Get Data" onClick={handleGetData} />
     </ViewContainer>
