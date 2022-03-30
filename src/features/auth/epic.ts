@@ -21,7 +21,7 @@ export const registerEpic = (action$: any) =>
     flatMap(async (action: any) => {
       try {
         const response = await api.registerUser(action.payload);
-        return { payload: response };
+        return { payload: response, addToast: action.addToast };
       } catch (e) {
         console.log(e);
         return false;
@@ -29,6 +29,7 @@ export const registerEpic = (action$: any) =>
     }),
     map((action: any) => {
       if (action.payload) {
+        action.addToast('User registered successfully.')
         return { type: REGISTER_USER_SUCCESS, payload: action.payload };
       } else {
         return { type: REGISTER_USER_FAILURE, payload: false };
@@ -42,7 +43,7 @@ export const loginEpic = (action$: any) =>
     flatMap(async (action: any) => {
       try {
         const response = await api.loginUser(action.payload);
-        return { payload: response, navigate: action.navigate };
+        return { payload: response, navigate: action.navigate, addToast: action.addToast };
       } catch (e) {
         console.log(e);
         return false;
@@ -50,6 +51,7 @@ export const loginEpic = (action$: any) =>
     }),
     map((action: any) => {
       if (action.payload) {
+        action.addToast('User Logged in.')
         action.navigate("/dashboard");
         return { type: LOGIN_USER_SUCCESS, payload: action.payload };
       } else {

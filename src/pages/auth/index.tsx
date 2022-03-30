@@ -10,6 +10,7 @@ import { authImage } from "assets/images";
 import Input from "components/input";
 import { useDispatch } from "react-redux";
 import { login, register } from "features/auth/action";
+import { useToasts } from 'react-toast-notifications'
 
 const Container = styled(Flex)`
   align-items: center;
@@ -143,6 +144,7 @@ const LeftImage = styled.img`
 function AuthPage() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { addToast } = useToasts();
 
   const [isSignup, setIsSignup] = useState<boolean>(false);
 
@@ -156,9 +158,9 @@ function AuthPage() {
     console.log(e);
     e.preventDefault();
     if (isSignup) {
-      dispatch(register(form));
+      dispatch(register(form,addToast));
     } else {
-      dispatch(login(form, navigate));
+      dispatch(login(form, navigate,addToast));
     }
   };
 

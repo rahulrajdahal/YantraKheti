@@ -128,7 +128,7 @@ function MyDashboardContainer() {
         ))}
       </Flex>
       :
-      <div>Lllll</div>  
+      <div>Please click on get data to get the sensor data.</div>  
     }
       </Body2>
 

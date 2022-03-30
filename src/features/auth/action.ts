@@ -10,12 +10,12 @@ export const LOGOUT_USER_LOADING = "LOGOUT_USER_LOADING";
 export const LOGOUT_USER_SUCCESS = "LOGOUT_USER_SUCCESS";
 export const LOGOUT_USER_FAILURE = "LOGOUT_USER_FAILURE";
 
-export const register = (payload: any) => {
-  return { type: REGISTER_USER_LOADING, payload };
+export const register = (payload: any, addToast: any) => {
+  return { type: REGISTER_USER_LOADING, payload, addToast };
 };
 
-export const login = (payload: any, navigate: any) => {
-  return { type: LOGIN_USER_LOADING, payload, navigate };
+export const login = (payload: any, navigate: any, addToast: any) => {
+  return { type: LOGIN_USER_LOADING, payload, navigate, addToast };
 };
 
 export const logut = () => {
