@@ -83,7 +83,6 @@ export default function Navbar() {
 
   const scrollToFeatures = () => {
     const features = document.getElementById("features");
-    console.log("fet", features);
 
     if (features) {
       window.scrollTo({ top: features.scrollHeight, behavior: "smooth" });

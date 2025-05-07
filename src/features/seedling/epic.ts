@@ -17,7 +17,6 @@ export const getSeedlingDataEpic = (action$: any) =>
         const response = await myApi.getSeedData(action.payload);
         return { payload: response };
       } catch (e) {
-        console.log(e);
         return { error: false };
       }
     }),

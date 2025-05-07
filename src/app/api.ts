@@ -23,11 +23,9 @@ export default class Api {
   async registerUser(payload: any) {
     try {
       const res = await axios.post("/auth/register", payload);
-      console.log(`Register api response: ${res}`);
       const data = get(res, "data");
       return data;
     } catch (e) {
-      console.log(`Register api error: ${e}`);
       throw e;
     }
   }
@@ -35,13 +33,11 @@ export default class Api {
   async loginUser(payload: any) {
     try {
       const res = await axios.post("/auth/login", payload);
-      console.log(`Login api response: ${res}`);
       const data = get(res, "data");
 
       localStorage.setItem("jwt", data.jwt);
       return data;
     } catch (e) {
-      console.log(`Login api error: ${e}`);
       throw e;
     }
   }
@@ -49,11 +45,9 @@ export default class Api {
   async logoutUser() {
     try {
       const res = await axios.post("/auth/logout");
-      console.log(`Logout api response: ${res}`);
       const data = get(res, "data");
       return data;
     } catch (e) {
-      console.log(`Logout api error: ${e}`);
       throw e;
     }
   }
@@ -63,11 +57,9 @@ export default class Api {
       const res = await axios.get("/arduino/getSensorValue", {
         headers: await HeaderData(),
       });
-      console.log(`GetSensorValue api response: ${res}`);
       const data = get(res, "data");
       return data;
     } catch (e) {
-      console.log(`GetSensorValue api error: ${e}`);
       throw e;
     }
   }
@@ -77,11 +69,9 @@ export default class Api {
       const res = await axios.post("/arduino/setSensorValue", payload, {
         headers: await HeaderData(),
       });
-      console.log(`SetSensorValue api response: ${res}`);
       const data = get(res, "data");
       return data;
     } catch (e) {
-      console.log(`SetSensorValue api error: ${e}`);
       throw e;
     }
   }
@@ -91,11 +81,9 @@ export default class Api {
       const res = await axios.post("/detect/detectsedling", payload, {
         headers: await HeaderData(),
       });
-      console.log(`GET SEED DAT api response: ${res}`);
       const data = get(res, "data");
       return data;
     } catch (e) {
-      console.log(`GET SEED DAT api error: ${e}`);
       throw e;
     }
   }

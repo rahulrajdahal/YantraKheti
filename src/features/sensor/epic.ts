@@ -19,7 +19,6 @@ export const getSensorDataEpic = (action$: any) =>
         const response = await api.getSensorValues();
         return { payload: response };
       } catch (e) {
-        console.log(e);
         return false;
       }
     }),
@@ -40,7 +39,6 @@ export const setSensorDataEpic = (action$: any) =>
         const response = await api.setSensorValues(action.payload);
         return { payload: response };
       } catch (e) {
-        console.log(e);
         return false;
       }
     }),

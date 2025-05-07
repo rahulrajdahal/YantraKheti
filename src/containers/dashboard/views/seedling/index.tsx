@@ -1,7 +1,7 @@
 import { Button, Flex } from "components";
-import { Body1, Body2, Body3, Title1 } from "components/texts";
+import { Body1, Body2, Body3 } from "components/texts";
 import { getSeedlingData } from "features/seedling/action";
-import React, { ChangeEvent, useState } from "react";
+import { useState } from "react";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 
@@ -21,8 +21,6 @@ function SeedlingContainer() {
 
   const seedlingState = useSelector((state: RootStateOrAny) => state.seedling);
 
-  console.log(seedlingState);
-
   return (
     <ViewContainer>
       <Body1 lineHeight={32} fontWeight="700" color="#0D1829" marginBottom={5}>
@@ -41,7 +39,6 @@ function SeedlingContainer() {
               onChange={(e: any) => {
                 setForm(e.target.files[0]);
                 setImgObjUrl(URL.createObjectURL(e.target.files[0]));
-                console.log(imgObjUrl);
               }}
             />
             <Button

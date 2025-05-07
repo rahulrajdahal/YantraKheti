@@ -155,7 +155,6 @@ function AuthPage() {
   }>({ name: "", email: "", password: "" });
 
   const handleSubmit = (e: any) => {
-    console.log(e);
     e.preventDefault();
     if (isSignup) {
       dispatch(register(form, addToast));
@@ -164,8 +163,6 @@ function AuthPage() {
     }
   };
 
-  // console.log("temp", temp);
-
   return (
     <Container>
       <LeftContainer>
@@ -173,7 +170,9 @@ function AuthPage() {
           <LogoIcon />
           <Body3 lineHeight={32}>YantriKheti</Body3>
         </LogoContainer>
-        <LeftTitle>Get Started by Logging into your account</LeftTitle>
+        <LeftTitle>
+          Get Started by {isSignup ? "Creating" : "Logging into"} your account
+        </LeftTitle>
 
         <LeftInfo>
           Quickly {isSignup ? "Create" : "Log In to"} your account and get
