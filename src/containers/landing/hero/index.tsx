@@ -1,7 +1,6 @@
 import { heroImage } from "assets/images";
 import { Flex } from "components";
 import { Body1, Body4, Title4 } from "components/texts";
-import React from "react";
 import styled from "styled-components";
 
 const ImageContainer = styled.div`
@@ -88,10 +87,10 @@ function HeroContainer() {
       </ImageContainer>
 
       <Info>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
+        Grow flawless, high-yield crops year-round with our automated
+        hydroponics system! Smart tech ensures perfect nutrients, lighting, and
+        climate control—no soil or pesticides. Boost growth, save water, and
+        harvest perfect plants effortlessly. Start today!
       </Info>
     </Flex>
   );

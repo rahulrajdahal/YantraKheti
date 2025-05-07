@@ -1,9 +1,8 @@
-import React from "react";
 import styled from "styled-components";
 // import { footerLogo, logo } from "../../assets/images";
-import Flex from "../flex";
-import { Body3, Body4, Body6 } from "components/texts";
 import { LogoIcon } from "assets/icons";
+import { Body4, Body6 } from "components/texts";
+import Flex from "../flex";
 
 const Container = styled.section`
   background: #000000;
@@ -19,20 +18,18 @@ const Links = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 0 1rem 3.75rem 1rem;
   width: 100%;
   gap: 2rem;
-  padding-bottom: 3.75rem;
   border-bottom: 1px solid #2d2d2d;
 
   @media (min-width: 1100px) {
+    padding: 0 10rem 3.75rem 10rem;
     gap: 5rem;
-    padding: 0 10rem;
   }
 
   @media (min-width: 1920px) {
     gap: 15rem;
-    padding: 0 10rem;
   }
 `;
 

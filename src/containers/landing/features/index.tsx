@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import styled from "styled-components";
 import { Flex } from "components";
-import { Body1, Body2, Body4, Body5, Title3, Title4 } from "components/texts";
+import { Body1, Body4, Body5, Title4 } from "components/texts";
 import {
   ArchiveAddIcon,
   BedIcon,
@@ -12,6 +10,7 @@ import {
   SearchIcon,
   SettingsHorizontalIcon,
 } from "meistericons";
+import styled from "styled-components";
 
 const Container = styled(Flex)`
   background: #f0f5f9;
@@ -82,63 +81,61 @@ const StickyContainer = styled(Flex)`
 `;
 
 function FeaturesContainer() {
-  const [stick, setStick] = useState<boolean>(false);
-
   const features = [
     {
       id: 1,
       icon: <DashboardIcon />,
       feature: "Humidity",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      desc: "Control and monitor humidity effortlessly.",
       background: "#D2DCFA",
     },
     {
       id: 2,
       icon: <ArchiveAddIcon />,
       feature: "Temperature",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      desc: "The application ensures exact monitor and  control over farm temperatures.",
       background: "#D0EFDB",
     },
     {
       id: 3,
       icon: <SearchIcon />,
       feature: "Co2",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      desc: "Monitor the CO2 presence in the environment.",
       background: "#F8CCDE",
     },
     {
       id: 4,
       icon: <SearchAddIcon />,
       feature: "Harmful Gases",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      desc: "Detect harmful gases and grow healthy crops.",
       background: "#FDE3CD",
     },
     {
       id: 5,
       icon: <NotificationIcon />,
       feature: "Fire detection",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      desc: "Fire detection technology to help secure your farm.",
       background: "#D2DCFA",
     },
     {
       id: 6,
       icon: <SettingsHorizontalIcon />,
       feature: "Accumulators",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      desc: "Efficiently monitor and control accumulator levels.",
       background: "#D0EFDB",
     },
     {
       id: 7,
       icon: <NoEntryIcon />,
       feature: "Web App",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      desc: "Control your farms through an intuitive dashboard.",
       background: "#F8CCDE",
     },
     {
       id: 8,
       icon: <BedIcon />,
       feature: "IOT",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      desc: "IOT hydroponics to ensure best management and monitoring of your next big farm.",
       background: "#FDE3CD",
     },
   ];
@@ -156,9 +153,7 @@ function FeaturesContainer() {
           Our Top Features
         </Title4>
         <FeaturesBody>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam.
+          Some of the top features of our hydroponics system.
         </FeaturesBody>
       </StickyContainer>
 

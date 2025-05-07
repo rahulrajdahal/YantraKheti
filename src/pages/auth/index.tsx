@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
 import { ArrowLeftIcon } from "meistericons";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
-import { Button, Flex } from "components";
-import { Body3, Body4, Body5, Body6, Title4 } from "components/texts";
 import { LogoIcon } from "assets/icons";
 import { authImage } from "assets/images";
+import { Button, Flex } from "components";
 import Input from "components/input";
-import { useDispatch } from "react-redux";
+import { Body3, Body4, Body5, Body6, Title4 } from "components/texts";
 import { login, register } from "features/auth/action";
-import { useToasts } from 'react-toast-notifications'
+import { useDispatch } from "react-redux";
+import { useToasts } from "react-toast-notifications";
 
 const Container = styled(Flex)`
   align-items: center;
@@ -158,9 +158,9 @@ function AuthPage() {
     console.log(e);
     e.preventDefault();
     if (isSignup) {
-      dispatch(register(form,addToast));
+      dispatch(register(form, addToast));
     } else {
-      dispatch(login(form, navigate,addToast));
+      dispatch(login(form, navigate, addToast));
     }
   };
 
@@ -228,14 +228,16 @@ function AuthPage() {
           width="100%"
           onChange={(e: any) => setForm({ ...form, password: e.target.value })}
         />
-        <Body6
-          color="#2051E5"
-          lineHeight={20}
-          marginBottom={3}
-          style={{ alignSelf: "flex-end" }}
-        >
-          Forgot Password?
-        </Body6>
+        {!isSignup ? (
+          <Body6
+            color="#2051E5"
+            lineHeight={20}
+            marginBottom={3}
+            style={{ alignSelf: "flex-end" }}
+          >
+            Forgot Password?
+          </Body6>
+        ) : null}
 
         <Button
           text={isSignup ? "Create Account" : "Log In"}
