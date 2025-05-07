@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 interface IFlexProps {
@@ -21,6 +20,7 @@ interface IFlexProps {
   wrap?: "wrap" | "no-wrap";
   onClick?(): any;
   rest?: any;
+  id?: string;
 }
 
 type IContainerProps = {
@@ -33,6 +33,7 @@ type IContainerProps = {
   marginBottom: number;
   gap: number;
   wrap: string;
+  id?: string;
 };
 
 const Container = styled.div<IContainerProps>`
@@ -60,12 +61,14 @@ const Flex = (props: IFlexProps) => {
     marginBottom = 0,
     gap = 0,
     wrap = "no-wrap",
+    id,
     onClick,
     ...rest
   } = props;
 
   return (
     <Container
+      id={id}
       display={display}
       gap={gap}
       wrap={wrap}

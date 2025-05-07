@@ -141,7 +141,7 @@ function FeaturesContainer() {
   ];
 
   return (
-    <Container marginTop={7.5}>
+    <Container id="features" marginTop={7.5}>
       <StickyContainer>
         <Title4
           color="#030913"
