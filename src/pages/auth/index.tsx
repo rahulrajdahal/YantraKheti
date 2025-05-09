@@ -13,7 +13,7 @@ import { useDispatch } from "react-redux";
 import { useToasts } from "react-toast-notifications";
 
 const Container = styled(Flex)`
-  align-items: center;
+  align-items: center !important;
   width: 100%;
   flex-direction: column;
 
@@ -232,7 +232,7 @@ function AuthPage() {
             color="#2051E5"
             lineHeight={20}
             marginBottom={3}
-            style={{ alignSelf: "flex-end" }}
+            style={{ alignSelf: "flex-end", textDecoration: "underline" }}
           >
             Forgot Password?
           </Body6>

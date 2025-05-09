@@ -1,6 +1,7 @@
+import { ComponentPropsWithoutRef } from "react";
 import styled from "styled-components";
 
-interface IFlexProps {
+interface IFlexProps extends ComponentPropsWithoutRef<"div"> {
   style?: any;
   display?: "flex" | "inline-flex";
   direction?: "row" | "column";
@@ -23,7 +24,7 @@ interface IFlexProps {
   id?: string;
 }
 
-type IContainerProps = {
+interface IContainerProps {
   display: string;
   direction: string;
   alignItems: string;
@@ -34,7 +35,7 @@ type IContainerProps = {
   gap: number;
   wrap: string;
   id?: string;
-};
+}
 
 const Container = styled.div<IContainerProps>`
   display: ${(p) => p.display};

@@ -77,6 +77,11 @@ const OpenMenuLinksContainer = styled.div`
   }
 `;
 
+const links = [
+  { id: 1, title: "How it Works" },
+  { id: 2, title: "Features" },
+];
+
 export default function Navbar() {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -138,7 +143,14 @@ export default function Navbar() {
       </>
 
       <LinksContainer>
-        <Body5>How it Works</Body5>
+        <Body5 onClick={scrollToFeatures}>
+          <Link
+            to={"#features"}
+            style={{ color: "inherit", textDecoration: "inherit" }}
+          >
+            How it Works
+          </Link>
+        </Body5>
         <Body5 onClick={scrollToFeatures}>
           <Link
             to={"#features"}
@@ -147,6 +159,7 @@ export default function Navbar() {
             Features
           </Link>
         </Body5>
+
         <Button text="Get Started" onClick={() => navigate("/auth")} />
       </LinksContainer>
     </Container>

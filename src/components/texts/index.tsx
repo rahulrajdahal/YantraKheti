@@ -1,6 +1,7 @@
+import { ComponentPropsWithoutRef } from "react";
 import styled from "styled-components";
 
-type ITextProps = {
+interface ITextProps extends ComponentPropsWithoutRef<"p"> {
   marginTop?: number;
   marginBottom?: number;
   marginRight?: number;
@@ -20,7 +21,7 @@ type ITextProps = {
     | "bold";
   lineHeight?: number;
   textAlign?: "center" | "left" | "right";
-};
+}
 
 export const Title1 = styled.h1<ITextProps>`
   font-family: PlusJakarta;

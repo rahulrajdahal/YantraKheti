@@ -70,7 +70,7 @@ const IconContainer = styled.div<IIconContainerProps>`
 `;
 
 const StickyContainer = styled(Flex)`
-  flex-direction: column;
+  flex-direction: column !important;
   width: 100%;
 
   @media (min-width: 1368px) {
